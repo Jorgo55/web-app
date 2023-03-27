@@ -1,0 +1,15 @@
+The number of columns displayed on the screen is determined by the cols variable in the HomeComponent. Initially, it is set to 3 in the class constructor. This means that three columns of product boxes are displayed by default.
+
+When the user changes the number of columns by clicking on the button in the app-products-header component, the onColumnsCountChange method in the HomeComponent is called. This method updates the cols variable with the new number of columns.
+
+Based on the new value of cols, the size of the tiles is updated by setting the rowHeight variable to the appropriate value from the ROWS_HEIGHT object. This object contains the heights of the tiles for different values of cols.
+
+The rowHeight value is then passed as an input to the mat-grid-list component in the HomeComponent template. This component is responsible for displaying the product boxes in a grid.
+
+The mat-grid-list component creates a grid with the number of columns specified in the cols variable and displays the product boxes as tiles. Each tile is an instance of the app-product-box component, which receives an input called fullWidthMode.
+
+The fullWidthMode input determines whether the product box should be displayed at full width or at the width of a single column in the grid. This is achieved by adding or removing the flex class to the div element containing the product box, depending on the value of fullWidthMode.
+
+The fullWidthMode input is initially set to false, which means that the product boxes are displayed at the width of a single column in the grid. When the user clicks on the button to change the number of columns, the cols value is updated and the rowHeight value is recalculated, which triggers a re-render of the grid and the product boxes.
+
+I hope this explanation helps you understand how the components communicate with each other to achieve the desired behavior.
