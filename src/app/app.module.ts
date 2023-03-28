@@ -1,3 +1,4 @@
+import { CartService } from "./services/cart.service";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -16,13 +17,21 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HeadComponent } from "./components/head/head.component";
-import { HomeComponent } from './components/pages/home/home.component';
-import { ProductsHeaderComponent } from './components/pages/components/products-header/products-header.component';
-import { FiltersComponent } from './components/filters/filters.component';
-import { ProductBoxComponent } from './components/pages/components/product-box/product-box.component';
-import { CartComponent } from './components/pages/cart/cart.component';
+import { HomeComponent } from "./components/pages/home/home.component";
+import { ProductsHeaderComponent } from "./components/pages/components/products-header/products-header.component";
+import { FiltersComponent } from "./components/filters/filters.component";
+import { ProductBoxComponent } from "./components/pages/components/product-box/product-box.component";
+import { CartComponent } from "./components/pages/cart/cart.component";
 @NgModule({
-  declarations: [AppComponent, HeadComponent, HomeComponent, ProductsHeaderComponent, FiltersComponent, ProductBoxComponent, CartComponent],
+  declarations: [
+    AppComponent,
+    HeadComponent,
+    HomeComponent,
+    ProductsHeaderComponent,
+    FiltersComponent,
+    ProductBoxComponent,
+    CartComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -40,7 +49,7 @@ import { CartComponent } from './components/pages/cart/cart.component';
     MatBadgeModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

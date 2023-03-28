@@ -1,3 +1,5 @@
+import { Product } from "./../../../models/product.model";
+import { CartService } from "./../../../services/cart.service";
 import { OnInit } from "@angular/core";
 import { Component } from "@angular/core";
 
@@ -13,7 +15,7 @@ export class HomeComponent implements OnInit {
   categ: string | undefined;
   //we declare a new property that will return the numbers of product in the display therefor update the size of the tiles
   rowHeight = ROWS_HEIGHT[this.cols];
-  constructor() {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {}
 
@@ -25,6 +27,16 @@ export class HomeComponent implements OnInit {
 
   OnShowCategory(category: string): void {
     this.categ = category;
-    console.log(category);
+    // console.log(category);
+  }
+
+  onAddToCart(product: Product): void {
+    this.cartService.addToCart({
+      product: product.image,
+      name: product.title,
+      price: product.price,
+      quantity: 1,
+      id: product.id,
+    });
   }
 }
