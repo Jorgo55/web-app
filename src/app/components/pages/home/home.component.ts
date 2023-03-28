@@ -13,10 +13,8 @@ export class HomeComponent implements OnInit {
   categ: string | undefined;
   //we declare a new property that will return the numbers of product in the display therefor update the size of the tiles
   rowHeight = ROWS_HEIGHT[this.cols];
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method, @typescript-eslint/no-empty-function
   ngOnInit(): void {}
 
   onColumnsCountChange(colsNum: number): void {
