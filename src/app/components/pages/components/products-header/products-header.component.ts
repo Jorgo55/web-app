@@ -10,10 +10,8 @@ export class ProductsHeaderComponent implements OnInit {
   //we send the data with the output to the home component to execute
   sort = "sort";
   itemsshowCounnt = 12;
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method, @typescript-eslint/no-empty-function
   ngOnInit(): void {}
 
   onSortUpdated(newSort: string): void {
