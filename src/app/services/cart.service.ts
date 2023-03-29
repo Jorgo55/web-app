@@ -37,6 +37,14 @@ export class CartService {
     this.cart.next({ items: [] });
     this._snackBar.open("Cart is cleared", "Ok", { duration: 3000 });
   }
+  removeFromCart(item: CartItem): void {
+    const filteredItems = this.cart.value.items.filter(
+      (_item) => _item.id !== item.id
+    );
+
+    this.cart.next({ items: filteredItems });
+    this._snackBar.open("item is removed", "Ok", { duration: 3000 });
+  }
 }
 
 //this service will make posisble for us to use the cart property wherever we want and by assigning it to a behavioursubject
