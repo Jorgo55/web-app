@@ -23,7 +23,7 @@ import { FiltersComponent } from "./components/filters/filters.component";
 import { ProductBoxComponent } from "./components/pages/components/product-box/product-box.component";
 import { CartComponent } from "./components/pages/cart/cart.component";
 import { StoreService } from "./services/store.service";
-import { HttpClient } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { HttpClient } from "@angular/common/http";
     MatTableModule,
     MatBadgeModule,
     MatSnackBarModule,
-    // HttpClient,
+    HttpClientModule,
   ],
   providers: [CartService, StoreService],
   bootstrap: [AppComponent],
